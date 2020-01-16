@@ -58,7 +58,7 @@ def telegram_bot_sendtext(bot_message):
     
 
 now = datetime.datetime.now()
-today = str(now.year) + "/" + str(now.month) + "/" + str(now.day if now.day > 9 else "0" + str(now.day))
+today = str(now.year) + "/" + str(now.month if now.month > 9 else "0" + str(now.month)) + "/" + str(now.day if now.day > 9 else "0" + str(now.day))
 message = getText("/home/pi/Desktop/data/Counters/"+today+".txt")
 counters = getSortedOutput(getCountersList(message))
 output = getMessage(counters)

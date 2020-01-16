@@ -23,7 +23,7 @@ def getText(counts):
     return text
     
 now = datetime.datetime.now()
-today = str(now.year) + "/" + str(now.month) + "/" + str(now.day if now.day > 9 else "0" + str(now.day))
+today = str(now.year) + "/" + str(now.month if now.month > 9 else "0" + str(now.month)) + "/" + str(now.day if now.day > 9 else "0" + str(now.day))
 f = open("/home/pi/Desktop/data/Posts/"+ today+"/all.csv")
 counts = word_count(f.read())
 text = getText(counts)
